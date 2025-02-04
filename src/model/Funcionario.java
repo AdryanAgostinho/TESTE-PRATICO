@@ -32,7 +32,8 @@ public class Funcionario extends Pessoa{
     }
 
     public String formatarSalario() {
-        return String.format("%,.2f", salario).replace(',', 'X').replace('.', ',').replace('X', '.');
+        return String.format("%,.2f", salario);
+
     }
 
     @Override
