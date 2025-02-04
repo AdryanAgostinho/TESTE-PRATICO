@@ -37,7 +37,7 @@ public class FuncionarioController {
     }
 
     public Funcionario obterFuncionarioMaisVelho() {
-        return funcionarios.stream().min(Comparator.comparingInt(Funcionario::getIdade)).orElse(null);
+        return funcionarios.stream().max(Comparator.comparingInt(Funcionario::getIdade)).orElse(null);
     }
 
     public List<Funcionario> listarOrdenadosPorNome() {
