@@ -38,7 +38,15 @@ public class Funcionario extends Pessoa{
 
     @Override
     public String toString() {
+        return toString(true);  // Chama o método com o parâmetro 'true' por padrão
+    }
+
+    public String toString(boolean incluirFuncao) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return nome + " - " + dataNascimento.format(formatter) + " - R$ " + formatarSalario() + " - " + funcao;
+        String resultado = nome + " - " + dataNascimento.format(formatter) + " - R$ " + formatarSalario();
+        if (incluirFuncao) {
+            resultado += " - " + funcao;  // Adiciona a função apenas quando necessário
+        }
+        return resultado;
     }
 }

@@ -43,8 +43,10 @@ public class Principal {
                 case 2 -> controller.getFuncionarios().forEach(System.out::println);
                 case 3 -> controller.aumentarSalarios(new BigDecimal("0.10"));
                 case 4 -> controller.agruparPorFuncao().forEach((funcao, lista) -> {
-                    System.out.println("\n" + funcao + ":");
-                    lista.forEach(System.out::println);
+                    System.out.println(funcao + ":");
+                    lista.forEach(funcionario -> {
+                        System.out.println(" - " + funcionario.toString(false));  // Não inclui a função aqui
+                    });
                 });
                 case 5 -> controller.aniversariantesMes(10, 12).forEach(System.out::println);
                 case 6 -> {
